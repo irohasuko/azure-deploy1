@@ -51,5 +51,5 @@ jobs:
         with:
           app-name: 'deploytest'
           slot-name: 'Production'
-          package: '*.war'
+          package: '*.jar'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_EC07DEA52C8C448BA8D2F9B8108C1DA0 }}
