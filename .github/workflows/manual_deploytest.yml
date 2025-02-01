@@ -53,4 +53,4 @@ jobs:
 
       - name: Move WAR to custom directory
         run: |
-          mv /home/site/wwwroot/*.war /usr/local/tomcat/webapps/test2.war
+          mv /usr/local/tomcat/webapps/*.war /usr/local/tomcat/webapps/test2.war
