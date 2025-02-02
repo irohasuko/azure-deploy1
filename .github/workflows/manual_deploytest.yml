@@ -1,7 +1,7 @@
 # Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 
-name: Build and deploy WAR app to Azure Web App - deploytest
+name: AzureにWebappsを任意の名前でデプロイ
 
 on:
   workflow_dispatch:
@@ -41,6 +41,9 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: java-app
+
+      - name: Rename WAR file (if needed)
+        run: mv *.war test2.war
       
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
@@ -48,9 +51,5 @@ jobs:
         with:
           app-name: 'deploytest'
           slot-name: 'Production'
-          package: '*.war'
+          package: 'test2.war'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_EC07DEA52C8C448BA8D2F9B8108C1DA0 }}
-
-      - name: Move WAR to custom directory
-        run: |
-          mv /usr/local/tomcat/webapps/*.war /usr/local/tomcat/webapps/test2.war
