@@ -55,4 +55,4 @@ jobs:
       - name: Move WAR file to Tomcat webapps directory
         run: |
           echo "Moving WAR file to Tomcat webapps directory"
-          sudo mv /home/site/wwwroot/test2.war /usr/local/tomcat/webapps/test2.war
+          mv /home/site/wwwroot/test2.war /usr/local/tomcat/webapps/test2.war
