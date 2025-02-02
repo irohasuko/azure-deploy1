@@ -49,7 +49,6 @@ jobs:
           app-name: 'deploytest'
           slot-name: 'Production'
           package: 'test2.war'
-          target-path: /home/site/wwwroot
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_EC07DEA52C8C448BA8D2F9B8108C1DA0 }}
 
       - name: Move WAR file to Tomcat webapps directory
