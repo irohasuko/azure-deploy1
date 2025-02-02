@@ -32,6 +32,7 @@ dependencies {
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+	providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
 }
 
 tasks.named('test') {
@@ -40,4 +41,8 @@ tasks.named('test') {
 
 war {
     enabled = false
+}
+
+tasks.bootWar {
+    archiveFileName.set("test2.war") // 任意の名前に変更
 }
